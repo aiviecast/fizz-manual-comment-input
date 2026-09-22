@@ -1,7 +1,7 @@
 # fizz-manual-comment-input
 
 **Fizz** コメント入力系部品 — 運用者が stdin に打った行を正規化コメント
-([fizz-protocol](https://github.com/Aid-On/fizz-protocol) の `Comment`、
+([fizz-protocol](https://github.com/aiviecast/fizz-protocol) の `Comment`、
 source = `Manual`) として NDJSON で stdout に流す。
 
 責務は一行: **運用者の手入力 → comment ストリーム**。
