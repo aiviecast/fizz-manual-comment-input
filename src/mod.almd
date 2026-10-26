@@ -26,7 +26,7 @@ fn parse_input_line(line: String) -> Option[ParsedInput] = {
   else {
     let user = string.trim(list.first(parts) ?? "")
     // text 側にタブが含まれていた場合はそのまま復元する。
-    let text = string.trim(string.join(list.drop(parts, 1), "\t"))
+    let text = string.trim(list.join(list.drop(parts, 1), "\t"))
     guard text != "" else none
     some(ParsedInput {
       user: if user == "" then none else some(user),
