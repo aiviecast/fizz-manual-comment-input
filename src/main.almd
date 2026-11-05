@@ -19,14 +19,14 @@ effect fn main() -> Unit = {
   var seq = 0
   var open = true
   while open {
-    let line = io.read_line()
+    let line = io.read_line() ?? ""
     if line == "" then {
       open = false
     } else {
       match manual.parse_input_line(line) {
         none    => (),
         some(p) => {
-          let id = "man-${int.to_string(env.millis())}-${int.to_string(seq)}"
+          let id = "man-${int.to_string(datetime.now_ms())}-${int.to_string(seq)}"
           seq = seq + 1
           println(comment.comment_to_json(manual.to_comment(p, user, id)))
         },
